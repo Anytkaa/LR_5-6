@@ -1,10 +1,9 @@
-﻿const N = 15;
-var
-    arr: array[1..N] of byte;
+﻿var
+    arr: array[1..15] of byte;
     i, k, num, frq , max_frq: byte;
 begin
     randomize;
-    for i:=1 to N do begin
+    for i:=1 to 15 do begin
         arr[i] := random(20);
         write(arr[i],' ');
     end;
@@ -12,9 +11,9 @@ begin
 
     num := arr[1];
     max_frq := 1;
-    for i:=1 to N-1 do begin
+    for i:=1 to 15-1 do begin
         frq := 1;
-        for k:=i+1 to N do
+        for k:=i+1 to 15 do
             if arr[i] = arr[k] then 
                 frq := frq + 1;
         if frq > max_frq then begin
@@ -26,5 +25,5 @@ begin
     if max_frq > 1 then
         writeln(max_frq, ' раз(а) встречается число ', num)
     else
-        writeln('Все элементы уникальны!');
+        writeln('Все элементы уникальны');
 end.
